@@ -41,7 +41,7 @@ public class OkhttpOutboundHandler {
     }
     
     private void fetchGet(final FullHttpRequest inbound, final ChannelHandlerContext ctx, final String url) {
-        String result = OkHttpHelper.sendGet(url);
+        String result = OkHttpHelper.sendGet(url, inbound);
         try {
             handleResponse(inbound, ctx, result);
         } catch (Exception e) {
